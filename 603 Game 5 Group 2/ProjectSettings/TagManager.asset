@@ -45,3 +45,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1181420709
+    locked: 0
+  - name: F_Wall
+    uniqueID: 3164472329
+    locked: 0
+  - name: F_Background
+    uniqueID: 478056919
+    locked: 0
+  - name: NPCS_Background
+    uniqueID: 2138419843
+    locked: 0
+  - name: F_Chairs
+    uniqueID: 2935406297
+    locked: 0
+  - name: NPCS_Foreground
+    uniqueID: 3727428401
+    locked: 0
+  - name: Player
+    uniqueID: 438231929
+    locked: 0
+  - name: F_Tables
+    uniqueID: 722229851
+    locked: 0
