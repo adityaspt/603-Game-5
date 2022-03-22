@@ -45,24 +45,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ////Input
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");
-
-        //if (movement.x == 0 && movement.y==0)
-        //{
-        //    playerAnimator.SetBool("isMoving", false);
-        //}
-        //else
-        //{
-        //    playerAnimator.SetBool("isMoving", true);
-        //    playerAnimator.SetFloat("dirY", movement.y);
-
-        //}
-
+        //Get x and y axis movement -1 to 1 range
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
+        //Animator with x and y values and speed of player movement
         playerAnimator.SetFloat("dirX", movement.x);
         playerAnimator.SetFloat("dirY", movement.y);
         playerAnimator.SetFloat("Speed", movement.sqrMagnitude);
@@ -73,15 +60,12 @@ public class PlayerController : MonoBehaviour
         {
             LastKeyUsed = "X";
             lastX = x;
-
         }
         if (y != lastY) //if current y value has changed, we set the last used axis to Y and set lastY to current y value
         {
             LastKeyUsed = "Y";
-            lastY = y;
-            
+            lastY = y;     
         }
-
         if (x != 0 && y == 0) //In case you stop using the last key and have still an other key pressed, you come back to the other key axis
         {
             LastKeyUsed = "X";
@@ -90,7 +74,6 @@ public class PlayerController : MonoBehaviour
         {
             LastKeyUsed = "Y";
         }
-
 
         if (LastKeyUsed == "X") //Then we check which axis was last used, and we set movement x and y value depending on the result
         {
@@ -102,7 +85,6 @@ public class PlayerController : MonoBehaviour
             movement.x = 0;
             movement.y = y;
         }
-
     }
 
 
