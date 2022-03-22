@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Start");
         Time.timeScale = 1;
-        //SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("BarScene");
     }
 
     public void OnResume()
