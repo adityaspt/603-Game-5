@@ -69,3 +69,6 @@ TagManager:
   - name: F_Tables
     uniqueID: 722229851
     locked: 0
+  - name: TopCameraSpaceUI
+    uniqueID: 3384131389
+    locked: 0
