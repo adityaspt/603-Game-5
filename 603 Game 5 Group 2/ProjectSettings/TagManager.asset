@@ -51,11 +51,11 @@ TagManager:
   - name: F_Wall
     uniqueID: 3164472329
     locked: 0
-  - name: F_Background
-    uniqueID: 478056919
-    locked: 0
   - name: NPCS_Background
     uniqueID: 2138419843
+    locked: 0
+  - name: F_Background
+    uniqueID: 478056919
     locked: 0
   - name: F_Chairs
     uniqueID: 2935406297

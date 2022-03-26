@@ -235,6 +235,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dfd9bf12c7bf64dad4613abf5fb7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprites:
+  - {fileID: -2267040535233329229, guid: 5cf76e91fe0d74d33a51917be8dbfb5a, type: 3}
+  - {fileID: -4382961456534561025, guid: 2f20e744df900f74198722cf0ef9c0f2, type: 3}
+  - {fileID: 4861812197848835150, guid: c5d8014a10ced0841bd9c39ab23cb2f2, type: 3}
+  - {fileID: 2739972934428727372, guid: be81a0c3bf9455f44a743996fc1762d0, type: 3}
+  - {fileID: -6604737440417328532, guid: e91fbbb3abef3cb4386fac768146b133, type: 3}
+  - {fileID: -4679537795268762059, guid: 4a5d32217ba186b408ddc4720a457657, type: 3}
 --- !u!4 &1100042144
 Transform:
   m_ObjectHideFlags: 0
