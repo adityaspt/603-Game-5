@@ -48,9 +48,28 @@ public class Challenge : MonoBehaviour {
         get { return IsCompleted; }
     }
 
+    [SerializeField]
+    private Sprite incompleteSprite;
+    /// <summary>
+    /// The sprite to display when the challenge is not yet completed
+    /// </summary>
+    public Sprite IncompleteSprite {
+        get { return incompleteSprite; }
+    }
+
+    [SerializeField]
+    private Sprite completeSprite;
+    /// <summary>
+    /// The sprite to display when the challenge is completed
+    /// </summary>
+    public Sprite CompleteSprite {
+        get { return completeSprite; }
+    }
+
     // Start is called before the first frame update
     void Start() {
         isCompleted = false;
+        gameObject.GetComponent<SpriteRenderer>().sprite = incompleteSprite;
     }
 
     /// <summary>
@@ -77,24 +96,35 @@ public class Challenge : MonoBehaviour {
             }
         }
 
+        // Print out the roll
+        // TODO: Replace this with an onscreen message
+        Debug.Log(p.Name + " scored " + statScore[0] + " in Strength, " + statScore[1] + " in Dexterity, and " + statScore[2] + " in Intelligence.");
+
         // Resolve if success or not
         if(success) {
-            /*
-             * TODO:
-             * 1) Print out the success message
-             * 2) Change the challenge sprite to a completed state
-             * 3) isCompleted = true;
-             * 4) Close / do whatever menu management is needed
-             * 
-             */
+            // Print out the success message
+            // TODO: Replace this with an onscreen message
+            Debug.Log(p.Name + " " + successText);
+
+            // Change the challenge sprite to a completed state
+            gameObject.GetComponent<SpriteRenderer>().sprite = completeSprite;
+
+            // Set completed to true
+            isCompleted = true;
+
+            // Menu management
+            // TODO: When someone works on the house scene
         } else {
-            /*
-             * TODO:
-             * 1) Print out a random failure message
-             * 2) Remove the Person from the Party
-             * 3) Close / do whatever menu management is needed
-             * 
-             */
+            // Print out a random failure message
+            // TODO: Replace this with an onscreen message
+            int failureIndex = Random.Range(0, failureTexts.Length);
+            Debug.Log(p.Name + " " + failureTexts[failureIndex]);
+
+            // Remove the Person from the Party
+            GameManager.Instance.PlayerParty.People.Remove(p);
+
+            // Menu management
+            // TODO: When someone works on the house scene
         }
     }
 }

@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour {
         get { return playerParty; }
     }
 
+    [SerializeField]
+    private List<Sprite> playerSprites;
+    public List<Sprite> PlayerSprites {
+        get { return playerSprites; }
+    }
+
     // Start is called before the first frame Update
     void Start() {
 

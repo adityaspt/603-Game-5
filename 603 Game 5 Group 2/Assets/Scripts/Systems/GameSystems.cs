@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameSystems {
     static class SystemVariables {
-        private static string[] Names = new[] { "TestName 1", "TestName 2", "TestName 3" };
+        private static string[] Names = new[] { "Jessie", "Cleo", "Madison", "Angel", "Sam", "Jamie", "Franke", "Dakota", "Alexis", "Chris", "Charlie" };
         /// <summary>
         /// Returns a random name
         /// </summary>
@@ -152,7 +152,9 @@ namespace GameSystems {
             // Get title
             title = SystemVariables.GetTitle(stats);
 
-            // TODO: Get image
+            // Get image
+            int imageIndex = Random.Range(0, GameManager.Instance.PlayerSprites.Count);
+            image = GameManager.Instance.PlayerSprites[imageIndex];
         }
 
         // Methods
@@ -225,6 +227,12 @@ namespace GameSystems {
         public Equipment(string name, int[] statImprovements) {
             this.name = name;
             this.statImprovements = statImprovements;
+        }
+
+        public Equipment(string name, int[] statImprovements, Sprite image) {
+            this.name = name;
+            this.statImprovements = statImprovements;
+            this.image = image;
         }
     }
 }
