@@ -28,8 +28,11 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame Update
     void Start() {
 
+        playerParty = new Party();
+        Cursor.visible = false;
         // Move to the main menu
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("BarScene"); //Change this later*****
     }
 
     // Update is called once per frame

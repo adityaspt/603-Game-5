@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 15f)]
     private float moveSpeed;
 
-    [SerializeField]
-    Animator playerAnimator;
+    public Animator playerAnimator;
 
     private Rigidbody2D rdb2;
 
@@ -22,15 +21,8 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     float x = 0;
     float y = 0;
-
 
     [SerializeField]
     float lastX = 0; //To check if current x value has changed from last
