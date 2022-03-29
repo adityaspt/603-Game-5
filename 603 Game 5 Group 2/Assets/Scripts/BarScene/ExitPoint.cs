@@ -11,6 +11,7 @@ public class ExitPoint : MonoBehaviour
         {
             if (GameManager.Instance.PlayerParty.People.Count >= 4)
             {
+                GameManager.Instance.isStartingFromBar = true;
                 print("Exit point hit only if the people count is 4 or greater");
                 //Load the mansion scene here//SceneManager.LoadScene("GameScene or Mainsion Scene");
             }

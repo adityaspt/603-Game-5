@@ -13,6 +13,13 @@ public class BarGameManager : MonoBehaviour
     [SerializeField]
     private PlayerController player;
 
+    [Header("NPC References")]
+    [SerializeField]
+    private List<Sprite> npcSprites;
+
+    [SerializeField]
+    List<GameObject> npcObjects;
+
     [Header("References for NPC Canvas")]
     [SerializeField]
     private GameObject npcCanvas;
@@ -37,6 +44,15 @@ public class BarGameManager : MonoBehaviour
     [Header("NPC Canvas")]
     [SerializeField]
     GameObject partyCanvas;
+
+
+    private void Start()
+    {
+        foreach(GameObject npc in npcObjects)
+        {
+            npc.GetComponent<SpriteRenderer>().sprite = npcSprites[UnityEngine.Random.Range(0, npcSprites.Count)];
+        }
+    }
 
 
     public void openNPCcanvas(object sender, EventTriggerSet.eventTrigger e)

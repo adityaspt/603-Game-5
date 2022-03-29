@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
         get { return playerSprites; }
     }
 
+    [SerializeField]
+    public bool isStartingFromBar = false;
+
     // Start is called before the first frame Update
     void Start() {
 

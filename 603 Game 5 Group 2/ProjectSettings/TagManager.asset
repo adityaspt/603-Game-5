@@ -63,11 +63,11 @@ TagManager:
   - name: NPCS_Foreground
     uniqueID: 3727428401
     locked: 0
-  - name: Player
-    uniqueID: 438231929
-    locked: 0
   - name: F_Tables
     uniqueID: 722229851
+    locked: 0
+  - name: Player
+    uniqueID: 438231929
     locked: 0
   - name: TopCameraSpaceUI
     uniqueID: 3384131389

@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprites:
-  - {fileID: -2267040535233329229, guid: 5cf76e91fe0d74d33a51917be8dbfb5a, type: 3}
   - {fileID: -4382961456534561025, guid: 2f20e744df900f74198722cf0ef9c0f2, type: 3}
   - {fileID: 4861812197848835150, guid: c5d8014a10ced0841bd9c39ab23cb2f2, type: 3}
   - {fileID: 2739972934428727372, guid: be81a0c3bf9455f44a743996fc1762d0, type: 3}
