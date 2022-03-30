@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BarScene.unity
     guid: 9b66e9ce52c408e4eb54fb41cf783522
+  - enabled: 1
+    path: Assets/Scenes/Mansion.unity
+    guid: 348ff511dd19e431e8abf246485568a7
   m_configObjects: {}

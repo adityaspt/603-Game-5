@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 2fff1599c9eba41bfa5c4de5e12cad1d
+guid: 430d05a2714ad4722ad372a8850276e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8797727757063367505
-    second: Mansion_MasterBedroom_0
+      213: 5400187779312684347
+    second: Mansion_Doorframes_0
   - first:
-      213: -4866091118740613498
-    second: Mansion_MasterBedroom_1
+      213: -352354824700168305
+    second: Mansion_Doorframes_1
   - first:
-      213: 4367982148760211757
-    second: Mansion_MasterBedroom_2
-  - first:
-      213: -7441667154680541901
-    second: Mansion_MasterBedroom_3
-  - first:
-      213: 8477960275201802852
-    second: Mansion_MasterBedroom_4
-  - first:
-      213: -8936836111322019106
-    second: Mansion_MasterBedroom_5
+      213: -4049074454734002736
+    second: Mansion_Doorframes_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,118 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mansion_MasterBedroom_0
+      name: Mansion_Doorframes_0
       rect:
         serializedVersion: 2
-        x: 368
-        y: 419
-        width: 15
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa4d4a1a73138e580800000000000000
-      internalID: -8797727757063367505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mansion_MasterBedroom_1
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 406
-        width: 32
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68658ceb8eb287cb0800000000000000
-      internalID: -4866091118740613498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mansion_MasterBedroom_2
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 419
-        width: 15
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d21991a2f903e9c30800000000000000
-      internalID: 4367982148760211757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mansion_MasterBedroom_3
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 365
-        width: 62
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33d03948623e9b890800000000000000
-      internalID: -7441667154680541901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mansion_MasterBedroom_4
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 364
-        width: 14
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 462c64fb3f3c7a570800000000000000
-      internalID: 8477960275201802852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mansion_MasterBedroom_5
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 402
-        width: 14
-        height: 13
+        x: 413
+        y: 343
+        width: 22
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +126,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eda84c8f7eaf9f380800000000000000
-      internalID: -8936836111322019106
+      spriteID: b3d86528c2251fa40800000000000000
+      internalID: 5400187779312684347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mansion_Doorframes_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 343
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87f9de572f2c1bf0800000000000000
+      internalID: -352354824700168305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mansion_Doorframes_2
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 343
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5a8708c3ccec7c0800000000000000
+      internalID: -4049074454734002736
       vertices: []
       indices: 
       edges: []
