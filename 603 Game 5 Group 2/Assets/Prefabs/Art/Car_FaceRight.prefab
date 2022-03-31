@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7981781553722025125}
   - component: {fileID: 7735857082499890100}
+  - component: {fileID: 2476414338873226547}
   - component: {fileID: 8247767068251410004}
+  - component: {fileID: 8768921303633202118}
   m_Layer: 0
   m_Name: Car_FaceRight
   m_TagString: Untagged
@@ -83,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2476414338873226547
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156643600009043044}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &8247767068251410004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,3 +132,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.37}
   m_EdgeRadius: 0
+--- !u!114 &8768921303633202118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156643600009043044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8245d192940218409010f71f4fb5eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
