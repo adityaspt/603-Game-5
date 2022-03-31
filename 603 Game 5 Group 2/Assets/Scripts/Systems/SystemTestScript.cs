@@ -8,6 +8,7 @@ public class SystemTestScript : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        /*
         party = new Party();
         party.Hire(new Person());
         party.People[0].Equip(new Equipment("Fork", new[] { 5, 0, 5 }));
@@ -15,5 +16,8 @@ public class SystemTestScript : MonoBehaviour {
         Debug.Log(party.People[0].Title);
         Debug.Log("STR: " + party.People[0].Stats[0] + ", DEX: " + party.People[0].Stats[1] + ", INT: " + party.People[0].Stats[2]);
         Debug.Log("STR: " + party.People[0].RollStats()[0] + ", DEX: " + party.People[0].RollStats()[1] + ", INT: " + party.People[0].RollStats()[2]);
+        */
+
+        PopupSystem.Instance.ShowNotice("Message contents message contents message contents message contents message contents message contents message contents message contents message contents message contents");
     }
 }

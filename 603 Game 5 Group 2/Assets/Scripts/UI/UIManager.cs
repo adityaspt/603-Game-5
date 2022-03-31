@@ -23,11 +23,16 @@ public class UIManager : MonoBehaviour
 
     public MenuState currentMenuState = MenuState.Game;
 
+    private string currentSceneName;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set gametime to active
         Time.timeScale = 1;
+
+        // Get name of active scene
+        currentSceneName = SceneManager.GetActiveScene().name;
 
         // Store all UI elements in respective categorieas
         gameObjects = GameObject.FindGameObjectsWithTag("showOnGame");
@@ -48,9 +53,13 @@ public class UIManager : MonoBehaviour
         {
             case MenuState.Game:
                 // If ESC is pressed
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (currentSceneName != "MainMenu" && currentSceneName != "CreditsMenu")
                 {
-                    MenuControl(pauseObjects, MenuState.Pause);
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        MenuControl(pauseObjects, MenuState.Pause);
+                    }
+                    break;
                 }
                 break;
             case MenuState.Pause:
