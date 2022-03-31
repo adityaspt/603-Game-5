@@ -119,7 +119,7 @@ public class Challenge : MonoBehaviour
         }
 
         // Print out the roll
-        string onScreenTitle = "";
+        string onScreenTitle = challengeTitle;
         string onScreenMessage = "";
         onScreenMessage += (p.Name + " scored " + statScore[0] + " in Strength, " + statScore[1] + " in Dexterity, and " + statScore[2] + " in Intelligence. ");
 
@@ -127,7 +127,6 @@ public class Challenge : MonoBehaviour
         if (success)
         {
             // Print out the success message
-            onScreenTitle = "Success!";
             onScreenMessage += (p.Name + " " + successText);
 
             // Show the popup
@@ -144,7 +143,6 @@ public class Challenge : MonoBehaviour
         else
         {
             // Print out a random failure message
-            onScreenTitle = "Failure!";
             int failureIndex = Random.Range(0, failureTexts.Length);
             onScreenMessage += (p.Name + " " + failureTexts[failureIndex]);
 

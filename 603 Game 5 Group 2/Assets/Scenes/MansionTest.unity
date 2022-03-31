@@ -292,8 +292,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: successText
+      value: sucessfully fixed the leaky sink!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: challengeTitle
       value: Fix Faucet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: failureTexts.Array.data[0]
+      value: got eaten by a wild sink shark.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[2]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700370, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_RootOrder
@@ -341,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700371, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_Name
-      value: Challenge (2)
+      value: Faucet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
@@ -928,8 +944,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: successText
+      value: successfully rebuilt the dresser!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: challengeTitle
       value: Fix the dreser
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: failureTexts.Array.data[0]
+      value: got squashed by the dresser falling over.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[0]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[1]
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700370, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_RootOrder
@@ -977,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700371, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_Name
-      value: Challenge (4)
+      value: Dreser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
@@ -1107,8 +1139,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: successText
+      value: successfully unclogged the toilet!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: challengeTitle
       value: Fix the toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: failureTexts.Array.data[0]
+      value: fell into the toilet and drowned.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[0]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: statScoreRequirements.Array.data[1]
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700370, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_RootOrder
@@ -1156,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700371, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_Name
-      value: Challenge (3)
+      value: Toilet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
@@ -1493,16 +1541,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: successText
+      value: successfully cleared the chimney!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: challengeTitle
       value: Fix the Chimney
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: failureTexts.Array.data[0]
+      value: fell into the fireplace and burned to death.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[0]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[1]
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[2]
@@ -1554,7 +1610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700371, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_Name
-      value: Challenge (1)
+      value: Chimney
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
@@ -1763,7 +1819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4787294308816852986, guid: fcb73fd5c2c86394190608ef7d79f856, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -222.2
+      value: -222.20001
       objectReference: {fileID: 0}
     - target: {fileID: 5159972976643148513, guid: fcb73fd5c2c86394190608ef7d79f856, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2032,6 +2088,7 @@ MonoBehaviour:
   - {fileID: 2732819758155580419, guid: 5cf76e91fe0d74d33a51917be8dbfb5a, type: 3}
   - {fileID: -1579575689104570229, guid: 2f20e744df900f74198722cf0ef9c0f2, type: 3}
   challengeList: []
+  cacheChallengeList: []
   isStartingFromBar: 0
   storedAllChallenges: 0
   deathCount: 0
@@ -2118,16 +2175,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: successText
+      value: successfully rewired the stove!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: challengeTitle
+      value: Rewire the stove
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
+      propertyPath: failureTexts.Array.data[0]
+      value: got electrocuted rewiring the stove.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[0]
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[1]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700369, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: statScoreRequirements.Array.data[2]
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700370, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_RootOrder
@@ -2175,7 +2244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931585927374700371, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}
       propertyPath: m_Name
-      value: Challenge
+      value: Stove
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d50613a290836429c2ebe58027f7aa, type: 3}

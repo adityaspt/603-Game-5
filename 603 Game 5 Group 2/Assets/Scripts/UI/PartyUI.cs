@@ -86,8 +86,8 @@ public class PartyUI : MonoBehaviour
             PartyCanvas.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Name; //For name
             PartyCanvas.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Title; //For Title
             PartyCanvas.transform.GetChild(i).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Strength.ToString(); //For Strength
-            PartyCanvas.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Strength.ToString(); //For Dexterity
-            PartyCanvas.transform.GetChild(i).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Strength.ToString(); //For Intelligence
+            PartyCanvas.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Dexterity.ToString(); //For Dexterity
+            PartyCanvas.transform.GetChild(i).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Intelligence.ToString(); //For Intelligence
                                                                                                                                                                              //Still need to write logic for this
                                                                                                                                                                              // PartyCanvas.transform.GetChild(i).GetChild(5).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].HeldEquipment.Name.ToString(); //For Equipment
         }
