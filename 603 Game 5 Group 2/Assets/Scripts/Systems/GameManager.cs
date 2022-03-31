@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour {
         playerParty = new Party();
         Cursor.visible = false;
         // Move to the main menu
-        //SceneManager.LoadScene("MainMenu");
-        SceneManager.LoadScene("BarScene"); //Change this later*****
+        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("BarScene"); //Change this later*****
     }
 
     // Update is called once per frame
