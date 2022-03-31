@@ -97,34 +97,35 @@ public class Challenge : MonoBehaviour {
         }
 
         // Print out the roll
-        // TODO: Replace this with an onscreen message
-        Debug.Log(p.Name + " scored " + statScore[0] + " in Strength, " + statScore[1] + " in Dexterity, and " + statScore[2] + " in Intelligence.");
+        string onScreenTitle = "";
+        string onScreenMessage = "";
+        onScreenMessage += (p.Name + " scored " + statScore[0] + " in Strength, " + statScore[1] + " in Dexterity, and " + statScore[2] + " in Intelligence. ");
 
         // Resolve if success or not
         if(success) {
             // Print out the success message
-            // TODO: Replace this with an onscreen message
-            Debug.Log(p.Name + " " + successText);
+            onScreenTitle = "Success!";
+            onScreenMessage += (p.Name + " " + successText);
+
+            // Show the popup
+            PopupSystem.Instance.ShowMessage(onScreenTitle, onScreenMessage);
 
             // Change the challenge sprite to a completed state
             gameObject.GetComponent<SpriteRenderer>().sprite = completeSprite;
 
             // Set completed to true
             isCompleted = true;
-
-            // Menu management
-            // TODO: When someone works on the house scene
         } else {
             // Print out a random failure message
-            // TODO: Replace this with an onscreen message
+            onScreenTitle = "Failure!";
             int failureIndex = Random.Range(0, failureTexts.Length);
-            Debug.Log(p.Name + " " + failureTexts[failureIndex]);
+            onScreenMessage += (p.Name + " " + failureTexts[failureIndex]);
+
+            // Show the popup
+            PopupSystem.Instance.ShowMessage(onScreenTitle, onScreenMessage);
 
             // Remove the Person from the Party
             GameManager.Instance.PlayerParty.People.Remove(p);
-
-            // Menu management
-            // TODO: When someone works on the house scene
         }
     }
 }
