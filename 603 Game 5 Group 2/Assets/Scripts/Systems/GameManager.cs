@@ -41,7 +41,12 @@ public class GameManager : MonoBehaviour {
         Cursor.visible = false;
         // Move to the main menu
         //SceneManager.LoadScene("MainMenu");
-        SceneManager.LoadScene("BarScene"); //Change this later*****
+        SceneManager.LoadScene("Aditya Mansion Testing"); //Change this later*****
+
+        //Test delete later
+        Person p = new Person();
+        playerParty.People.Add(p);
+
     }
 
     // Update is called once per frame

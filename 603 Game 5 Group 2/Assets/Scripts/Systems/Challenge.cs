@@ -19,7 +19,7 @@ public class Challenge : MonoBehaviour {
     /// The stat score requirements to succeed in the challenge. [Strength, Dexterity, Intelligence]
     /// </summary>
     public int[] StatScoreRequirements {
-        get { return StatScoreRequirements; }
+        get { return StatScoreRequirements; } //Should be swaped with private variable??
     }
 
     [SerializeField]
