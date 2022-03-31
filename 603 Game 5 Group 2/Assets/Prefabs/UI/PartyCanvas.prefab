@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 4787294308816852986}
   - component: {fileID: 5132724556005244129}
   - component: {fileID: 3411791074439542577}
+  - component: {fileID: 7104364441558401799}
   m_Layer: 0
   m_Name: NPCBlock (3)
   m_TagString: Untagged
@@ -483,6 +484,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7104364441558401799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563253747086888658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e2b10ed1f86e848bf5b7566fa60cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personName: 
 --- !u!1 &710613678309825369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1044,7 @@ GameObject:
   - component: {fileID: 1924513689902772499}
   - component: {fileID: 1924513689902772509}
   - component: {fileID: 1924513689902772498}
+  - component: {fileID: 4047443706112684753}
   m_Layer: 0
   m_Name: NPCBlock
   m_TagString: Untagged
@@ -1100,6 +1115,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4047443706112684753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924513689902772496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e2b10ed1f86e848bf5b7566fa60cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personName: 
 --- !u!1 &1924513689941094479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6c023381833464144bd55cb79bbe76c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1627,7 +1655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8949d8cc1f1d94088b4f280f1200ef4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1837,7 +1865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b11e50938cc7e4a90abee00e9309984c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2260,7 +2288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6c023381833464144bd55cb79bbe76c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2336,7 +2364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6c023381833464144bd55cb79bbe76c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2412,7 +2440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8949d8cc1f1d94088b4f280f1200ef4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2756,7 +2784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8949d8cc1f1d94088b4f280f1200ef4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2832,7 +2860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8949d8cc1f1d94088b4f280f1200ef4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3176,7 +3204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b11e50938cc7e4a90abee00e9309984c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3252,7 +3280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b11e50938cc7e4a90abee00e9309984c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4400,7 +4428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6c023381833464144bd55cb79bbe76c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4421,6 +4449,7 @@ GameObject:
   - component: {fileID: 4237945415053266443}
   - component: {fileID: 8526334755806585245}
   - component: {fileID: 623559442043899275}
+  - component: {fileID: 2925889891691143095}
   m_Layer: 0
   m_Name: NPCBlock (2)
   m_TagString: Untagged
@@ -4491,6 +4520,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2925889891691143095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104478601252835948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e2b10ed1f86e848bf5b7566fa60cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personName: 
 --- !u!1 &8125430571750692504
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,7 +4733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b11e50938cc7e4a90abee00e9309984c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4712,6 +4754,7 @@ GameObject:
   - component: {fileID: 5159972976643148513}
   - component: {fileID: 850039433095313450}
   - component: {fileID: 5691399465598045076}
+  - component: {fileID: 5813882775216093073}
   m_Layer: 0
   m_Name: NPCBlock (4)
   m_TagString: Untagged
@@ -4782,3 +4825,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5813882775216093073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881786661785302442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e2b10ed1f86e848bf5b7566fa60cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personName: 

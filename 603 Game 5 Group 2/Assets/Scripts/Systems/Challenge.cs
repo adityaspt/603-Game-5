@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystems;
+using System.Linq;
 
-public class Challenge : MonoBehaviour {
+public class Challenge : MonoBehaviour
+{
     [SerializeField]
     private string challengeTitle;
     /// <summary>
     /// The name of the challenge
     /// </summary>
-    public string ChallengeTitle {
+    public string ChallengeTitle
+    {
         get { return challengeTitle; }
     }
 
@@ -18,8 +21,9 @@ public class Challenge : MonoBehaviour {
     /// <summary>
     /// The stat score requirements to succeed in the challenge. [Strength, Dexterity, Intelligence]
     /// </summary>
-    public int[] StatScoreRequirements {
-        get { return StatScoreRequirements; }
+    public int[] StatScoreRequirements
+    {
+        get { return StatScoreRequirements; } //Should be swaped with private variable??
     }
 
     [SerializeField]
@@ -27,7 +31,8 @@ public class Challenge : MonoBehaviour {
     /// <summary>
     /// The text to be printed when a person succeeds
     /// </summary>
-    public string SuccessText {
+    public string SuccessText
+    {
         get { return successText; }
     }
 
@@ -36,16 +41,19 @@ public class Challenge : MonoBehaviour {
     /// <summary>
     /// The set of texts to be randomly picked from and printed when a Person fails
     /// </summary>
-    public string[] FailureTexts {
+    public string[] FailureTexts
+    {
         get { return failureTexts; }
     }
 
+    [SerializeField]
     private bool isCompleted;
     /// <summary>
     /// Is this challenge completed yet?
     /// </summary>
-    public bool IsCompleted {
-        get { return IsCompleted; }
+    public bool IsCompleted
+    {
+        get { return isCompleted; }
     }
 
     [SerializeField]
@@ -53,7 +61,8 @@ public class Challenge : MonoBehaviour {
     /// <summary>
     /// The sprite to display when the challenge is not yet completed
     /// </summary>
-    public Sprite IncompleteSprite {
+    public Sprite IncompleteSprite
+    {
         get { return incompleteSprite; }
     }
 
@@ -62,23 +71,34 @@ public class Challenge : MonoBehaviour {
     /// <summary>
     /// The sprite to display when the challenge is completed
     /// </summary>
-    public Sprite CompleteSprite {
+    public Sprite CompleteSprite
+    {
         get { return completeSprite; }
     }
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         isCompleted = false;
         gameObject.GetComponent<SpriteRenderer>().sprite = incompleteSprite;
+
+        //var listOfC = GameManager.Instance.cacheChallengeList;
+        //if (listOfC.Contains(this))
+        //{
+        //  isCompleted =listOfC[listOfC.IndexOf(this)].IsCompleted;
+        //}
+
     }
 
     /// <summary>
     /// Attempts the challenge with the given Person
     /// </summary>
     /// <param name="p"></param>
-    public void Attempt(Person p) {
+    public void Attempt(Person p)
+    {
         // Bailout
-        if(isCompleted) {
+        if (isCompleted)
+        {
             Debug.LogError("You cannot attempt an already completed Challenge.");
             return;
         }
@@ -90,8 +110,10 @@ public class Challenge : MonoBehaviour {
         int[] statScore = p.RollStats();
 
         // Check the scores
-        for(int i = 0; i < statScore.Length; i++) {
-            if(statScore[i] < statScoreRequirements[i]) {
+        for (int i = 0; i < statScore.Length; i++)
+        {
+            if (statScore[i] < statScoreRequirements[i])
+            {
                 success = false;
             }
         }
@@ -102,7 +124,8 @@ public class Challenge : MonoBehaviour {
         onScreenMessage += (p.Name + " scored " + statScore[0] + " in Strength, " + statScore[1] + " in Dexterity, and " + statScore[2] + " in Intelligence. ");
 
         // Resolve if success or not
-        if(success) {
+        if (success)
+        {
             // Print out the success message
             onScreenTitle = "Success!";
             onScreenMessage += (p.Name + " " + successText);
@@ -115,7 +138,11 @@ public class Challenge : MonoBehaviour {
 
             // Set completed to true
             isCompleted = true;
-        } else {
+
+            GameManager.Instance.CheckIfAllChallengesAreDone();
+        }
+        else
+        {
             // Print out a random failure message
             onScreenTitle = "Failure!";
             int failureIndex = Random.Range(0, failureTexts.Length);
@@ -126,6 +153,23 @@ public class Challenge : MonoBehaviour {
 
             // Remove the Person from the Party
             GameManager.Instance.PlayerParty.People.Remove(p);
+            //Increment death counter int here 
+            GameManager.Instance.deathCount++;
         }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!IsCompleted)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                print("Challenge " + challengeTitle + " hit");
+                PartyUI.partyUIinstance.StartPersonSelect(this);
+                //GetComponent<BoxCollider2D>().isTrigger = false;
+            }
+        }
+    }
+
 }

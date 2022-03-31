@@ -9,12 +9,27 @@ public class ExitPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (GameManager.Instance.PlayerParty.People.Count >= 4)
+            //if (GameManager.Instance.PlayerParty.People.Count >0)
+            if (SceneManager.GetActiveScene().name == "BarScene")
             {
                 GameManager.Instance.isStartingFromBar = true;
-                print("Exit point hit only if the people count is 4 or greater");
-                //Load the mansion scene here//SceneManager.LoadScene("GameScene or Mainsion Scene");
+                print("Exit from bar");
+                //Load the mansion scene here
+                SceneManager.LoadScene("MansionTest");
             }
+            else if (SceneManager.GetActiveScene().name == "MansionTest") {
+                GameManager.Instance.isStartingFromBar = false;
+                GameManager.Instance.storedAllChallenges = false; //Need to store all challenges again when we come back to Mansion scene
+                SceneManager.LoadScene("BarScene");
+                print("Exit from mansion");
+            }
+            else
+            {
+                print("Exit from unknown");
+                //Add code for car scene handle
+            }
+
+
         }
     }
 }

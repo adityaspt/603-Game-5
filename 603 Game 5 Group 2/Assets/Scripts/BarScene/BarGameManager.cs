@@ -48,7 +48,8 @@ public class BarGameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach(GameObject npc in npcObjects)
+        Cursor.visible = false;
+        foreach (GameObject npc in npcObjects)
         {
             npc.GetComponent<SpriteRenderer>().sprite = npcSprites[UnityEngine.Random.Range(0, npcSprites.Count)];
         }

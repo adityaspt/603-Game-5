@@ -85,4 +85,6 @@ public class PlayerController : MonoBehaviour
         //Movement code
         rdb2.MovePosition(rdb2.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    
 }
