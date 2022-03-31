@@ -34,7 +34,7 @@ public class ButtonManager : MonoBehaviour
     public void OnOptions()
     {
         Debug.Log("Clicked Options");
-        //uI.GetComponent<UIManager>().ButtonPress("options");
+        uI.GetComponent<UIManager>().ButtonPress("options");
     }
 
     public void OnBack()
