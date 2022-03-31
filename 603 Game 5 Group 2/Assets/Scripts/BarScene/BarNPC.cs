@@ -43,6 +43,8 @@ public class BarNPC : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (GameManager.Instance.PlayerParty.People.Count >= 4)
+                return;
             onInteractBarNPC?.Invoke(this, new EventTriggerSet.eventTrigger
             {
               personReference=person,

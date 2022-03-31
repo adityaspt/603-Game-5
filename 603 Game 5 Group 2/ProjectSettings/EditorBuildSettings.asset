@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mansion.unity
     guid: 348ff511dd19e431e8abf246485568a7
+  - enabled: 1
+    path: Assets/Scenes/MansionTest.unity
+    guid: 6c4f129dfcd8e4845a8a2287c0511225
   m_configObjects: {}
