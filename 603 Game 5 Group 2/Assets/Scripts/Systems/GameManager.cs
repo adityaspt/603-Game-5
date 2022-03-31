@@ -30,19 +30,7 @@ public class GameManager : MonoBehaviour {
     private List<Sprite> playerSprites;
     public List<Sprite> PlayerSprites {
         get { return playerSprites; }
-    }
-
-
-    [SerializeField]
-    private List<Challenge> challengeList;
-    public List<Challenge> ChallengeList
-    {
-        get { return challengeList; }
-    }
-
-
-    public List<Challenge> cacheChallengeList; // For having a list to keep track of the previous challenges
-    
+    }  
 
 
     [SerializeField]
@@ -52,7 +40,11 @@ public class GameManager : MonoBehaviour {
     public bool storedAllChallenges = false;
 
 
-    public int deathCount = 0;
+    private int deathCount = 0;
+    public int DeathCount {
+        get { return deathCount; }
+        set { deathCount = value; }
+    }
 
     // Start is called before the first frame Update
     void Start() {
@@ -70,46 +62,8 @@ public class GameManager : MonoBehaviour {
 
     }
 
-
-    public void CheckIfAllChallengesAreDone()
-    {
-        bool isAllTrue = false;
-        if (ChallengeList == null)
-        {
-            return;
-        }
-        foreach(Challenge c in ChallengeList)
-        {
-            if (!c.IsCompleted)
-            {
-                isAllTrue = false;
-                break;
-            }
-            else
-            {
-                isAllTrue = true;
-            }
-        }
-        if( isAllTrue)
-        {
-            MansionGM.mansionGMInstance.EndGameUI();
-        }
-    }
-
     // Update is called once per frame
     void Update() {
-        //print("*** person count " + playerParty.People.Count);
-
-        if (!storedAllChallenges && SceneManager.GetActiveScene().name== "MansionTest")
-        {
-            challengeList = GameObject.FindObjectsOfType<Challenge>().ToList();
-            storedAllChallenges = true;
-            //cacheChallengeList = challengeList.ToList();
-        }
-        if(storedAllChallenges && SceneManager.GetActiveScene().name == "BarScene")
-        {
-            storedAllChallenges = false;
-        }
 
     }
 }

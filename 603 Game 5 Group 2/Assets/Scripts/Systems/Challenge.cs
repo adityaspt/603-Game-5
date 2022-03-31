@@ -82,12 +82,6 @@ public class Challenge : MonoBehaviour
         isCompleted = false;
         gameObject.GetComponent<SpriteRenderer>().sprite = incompleteSprite;
 
-        //var listOfC = GameManager.Instance.cacheChallengeList;
-        //if (listOfC.Contains(this))
-        //{
-        //  isCompleted =listOfC[listOfC.IndexOf(this)].IsCompleted;
-        //}
-
     }
 
     /// <summary>
@@ -138,7 +132,7 @@ public class Challenge : MonoBehaviour
             // Set completed to true
             isCompleted = true;
 
-            GameManager.Instance.CheckIfAllChallengesAreDone();
+            ChallengesHolder.Instance.CompleteChallenge(this);
         }
         else
         {
@@ -151,8 +145,9 @@ public class Challenge : MonoBehaviour
 
             // Remove the Person from the Party
             GameManager.Instance.PlayerParty.People.Remove(p);
+
             //Increment death counter int here 
-            GameManager.Instance.deathCount++;
+            GameManager.Instance.DeathCount++;
         }
     }
 
