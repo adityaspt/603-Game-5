@@ -13,6 +13,7 @@ public class DrivingController : MonoBehaviour
     public Quaternion left;
     public Quaternion up;
     public Quaternion down;
+    public Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +22,7 @@ public class DrivingController : MonoBehaviour
         left = new Quaternion(0f, 0f, 180f, 0f);
         right = new Quaternion(0f, 0f, 0f, 0f);
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,22 +30,24 @@ public class DrivingController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
+        anim.SetFloat("Movement_X", movement.x);
+        anim.SetFloat("Movement_Y", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude);
 /*        if (movement.x > 0)
         {
-            transform.rotation = right;
+
         }
         if(movement.x < 0)
         {
-            transform.rotation = left;
+
         }
         if(movement.y > 0)
         {
-            transform.rotation = down;
+
         }
         if(movement.y > 0)
         {
-            transform.rotation = up;
+
         }*/
     }
 

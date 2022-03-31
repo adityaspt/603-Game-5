@@ -15,12 +15,12 @@ public class ExitPoint : MonoBehaviour
                 GameManager.Instance.isStartingFromBar = true;
                 print("Exit from bar");
                 //Load the mansion scene here
-                SceneManager.LoadScene("MansionTest");
+                SceneManager.LoadScene("Driving Minigame");
             }
             else if (SceneManager.GetActiveScene().name == "MansionTest") {
                 GameManager.Instance.isStartingFromBar = false;
                 GameManager.Instance.storedAllChallenges = false; //Need to store all challenges again when we come back to Mansion scene
-                SceneManager.LoadScene("BarScene");
+                SceneManager.LoadScene("Driving Minigame");
                 print("Exit from mansion");
             }
             else
