@@ -299,6 +299,7 @@ MonoBehaviour:
   - {fileID: -6604737440417328532, guid: e91fbbb3abef3cb4386fac768146b133, type: 3}
   - {fileID: -4679537795268762059, guid: 4a5d32217ba186b408ddc4720a457657, type: 3}
   isStartingFromBar: 0
+  storedAllChallenges: 0
 --- !u!4 &1100042144
 Transform:
   m_ObjectHideFlags: 0
