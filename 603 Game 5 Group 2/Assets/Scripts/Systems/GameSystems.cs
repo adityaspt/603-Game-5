@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameSystems {
     static class SystemVariables {
-        private static string[] Names = new[] { "Jessie", "Cleo", "Madison", "Angel", "Sam", "Jamie", "Franke", "Dakota", "Alexis", "Chris", "Charlie" };
+        private static string[] Names = new[] { "Jessie", "Cleo", "Madison", "Angel", "Sam", "Jamie", "Frankie", "Dakota", "Alexis", "Chris", "Charlie", "Jordan", "River", "Justice", "Gab", "Leece", "Bait" };
         /// <summary>
         /// Returns a random name
         /// </summary>
