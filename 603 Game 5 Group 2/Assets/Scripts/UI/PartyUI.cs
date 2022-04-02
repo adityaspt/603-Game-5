@@ -21,6 +21,9 @@ public class PartyUI : MonoBehaviour
     private GameObject emptyPartyText;
 
     [SerializeField]
+    private GameObject fullPartyText;
+
+    [SerializeField]
     private GameObject npcBlockPrefab;
 
     //For Mansion scene
@@ -68,7 +71,7 @@ public class PartyUI : MonoBehaviour
             currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
 
             //Sets when the NPC Canvas is reset
-            if (PartyCanvas.activeSelf) 
+            if (PartyCanvas.activeSelf)
             {
                 PartyCanvas.SetActive(false);
                 return;
@@ -102,7 +105,7 @@ public class PartyUI : MonoBehaviour
             GameObject npcBlockObj = GameObject.Instantiate(npcBlockPrefab, PartyCanvas.transform);
 
             //Do this while setting NPC block in Mansion scene only and add button function then only
-            if (SceneManager.GetActiveScene().name == "MansionTest") 
+            if (SceneManager.GetActiveScene().name == "MansionTest")
                 npcBlockObj.transform.GetChild(6).GetComponent<Button>().onClick.AddListener(buttonOnClickPersonBlock);
             SetPartyBlockValues(npcBlockObj, i);
         }
@@ -189,7 +192,7 @@ public class PartyUI : MonoBehaviour
     void DeActivateButtons()
     {
         for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
-            PartyCanvas.transform.GetChild(i).GetChild(6).gameObject.SetActive(false); 
+            PartyCanvas.transform.GetChild(i).GetChild(6).gameObject.SetActive(false);
     }
 
 
@@ -243,5 +246,11 @@ public class PartyUI : MonoBehaviour
         cancelButton.SetActive(false);
         EnablePlayerController();
         ReleaseAnyHolderReferences();
+    }
+
+
+    public void ShowAndVanishFullPartyText()
+    {
+        StartCoroutine(ActiveAndDisappearObject(2f,fullPartyText));
     }
 }

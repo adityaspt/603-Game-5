@@ -1722,6 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b544938a75f8d4dacf2839edb4a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   name1: Josh
   name2: Jake
   deathCount: 10
@@ -1917,9 +1918,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartyCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4434245781874254996, guid: ded3eca183a23b441badd248e53e1a22, type: 3}
+      propertyPath: fullPartyText
+      value: 
+      objectReference: {fileID: 4434245783761162043}
     - target: {fileID: 4434245781874254999, guid: ded3eca183a23b441badd248e53e1a22, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1515120169}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ded3eca183a23b441badd248e53e1a22, type: 3}
+--- !u!1 &4434245783761162043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1954789687711381741, guid: ded3eca183a23b441badd248e53e1a22, type: 3}
+  m_PrefabInstance: {fileID: 4434245783761162042}
+  m_PrefabAsset: {fileID: 0}
