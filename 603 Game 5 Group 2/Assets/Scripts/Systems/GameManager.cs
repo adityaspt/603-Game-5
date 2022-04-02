@@ -46,6 +46,12 @@ public class GameManager : MonoBehaviour {
         set { deathCount = value; }
     }
 
+    private bool challengeCompleted = true;
+    public bool ChallengeCompleted {
+        get { return challengeCompleted; }
+        set { challengeCompleted = value; }
+    }
+
     // Start is called before the first frame Update
     void Start() {
 
