@@ -212,6 +212,7 @@ public class PartyUI : MonoBehaviour
         cancelButton.SetActive(false);
         EnablePlayerController();
         ReleaseAnyHolderReferences();
+        Cursor.visible = false;
     }
 
 
