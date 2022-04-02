@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Player player;
     public string name1 = "Josh";
     public string name2 = "Jake";
     public int deathCount = 10;
