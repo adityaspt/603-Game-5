@@ -104,7 +104,7 @@ public class BarGameManager : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = true;
         GameManager.Instance.PlayerParty.Hire(CurrentbarNPC);
         print("Party man title " + GameManager.Instance.PlayerParty.People[0].Title);
-        if (GameManager.Instance.PlayerParty.People.Count>0) // Do this only if party people are more than 0 //Test again later this maybe useless
+        if (GameManager.Instance.PlayerParty.People.Count>0) // Do this if() only if party people are more than 0 //Test again later this maybe useless
         {
             StartCoroutine(PartyUI.partyUIinstance.ActiveAndDisappearObject(3, partyCanvas));
             PartyUI.partyUIinstance.ShowNPCBlocks();

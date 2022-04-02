@@ -22,4 +22,8 @@ public class PersonBlockUI : MonoBehaviour
     {
 
     }
+    private void OnDisable() //Destroys the npc block
+    {
+        Destroy(this.gameObject);
+    }
 }

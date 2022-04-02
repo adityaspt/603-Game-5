@@ -20,6 +20,9 @@ public class PartyUI : MonoBehaviour
     private GameObject emptyPartyText;
 
     [SerializeField]
+    private GameObject npcBlockPrefab;
+
+    [SerializeField]
     private GameObject cancelButton; //For Mansion scene
 
     private PlayerController player;
@@ -35,6 +38,18 @@ public class PartyUI : MonoBehaviour
         currentPartyPeople= GameManager.Instance.PlayerParty.People.Count;
     }
 
+    /// <summary>
+    /// Destroys all npc blocks under partycanvas-->panel //Not gonna be used
+    /// </summary>
+    public void DestroyAllChild_NPCblocks()
+    {
+        //currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
+        for (int i = currentPartyPeople - 1; i >= 0; i--)
+        {
+            Destroy(PartyCanvas.transform.GetChild(i).gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -44,6 +59,7 @@ public class PartyUI : MonoBehaviour
             currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
             if (PartyCanvas.activeSelf) //Sets when the NPC Canvas is reset
             {
+                //DestroyAllChild_NPCblocks();
                 PartyCanvas.SetActive(false);
                 return;
             }
@@ -68,29 +84,29 @@ public class PartyUI : MonoBehaviour
     /// </summary>
     public void ShowNPCBlocks()
     {
-        //currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
+        
         print(GameManager.Instance.PlayerParty.People.Count + " people in party");
         for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
-            PartyCanvas.transform.GetChild(i).gameObject.SetActive(true);
-        SetPartyValues();
+        {
+            GameObject npcBlockObj = GameObject.Instantiate(npcBlockPrefab,PartyCanvas.transform);
+            SetPartyBlockValues(npcBlockObj,i);
+        }
+            //PartyCanvas.transform.GetChild(i).gameObject.SetActive(true);
+        
     }
 
     /// <summary>
     /// This function sets all the hired npc person's values in the Party UI
     /// </summary>
-    void SetPartyValues()
+    void SetPartyBlockValues(GameObject npcBlockObj, int personIndex)
     {
-        for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
-        {
-            PartyCanvas.transform.GetChild(i).GetComponent<PersonBlockUI>().person = GameManager.Instance.PlayerParty.People[i];
-            PartyCanvas.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Name; //For name
-            PartyCanvas.transform.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Title; //For Title
-            PartyCanvas.transform.GetChild(i).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Strength.ToString(); //For Strength
-            PartyCanvas.transform.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Dexterity.ToString(); //For Dexterity
-            PartyCanvas.transform.GetChild(i).GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].Intelligence.ToString(); //For Intelligence
-                                                                                                                                                                             //Still need to write logic for this
-                                                                                                                                                                             // PartyCanvas.transform.GetChild(i).GetChild(5).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[i].HeldEquipment.Name.ToString(); //For Equipment
-        }
+        npcBlockObj.GetComponent<PersonBlockUI>().person = GameManager.Instance.PlayerParty.People[personIndex];
+        npcBlockObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Name; //For name
+        npcBlockObj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Title; //For Title
+        npcBlockObj.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Strength.ToString(); //For Strength
+        npcBlockObj.transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Dexterity.ToString(); //For Dexterity
+        npcBlockObj.transform.GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Intelligence.ToString(); //For Intelligence
+        //Still need to write logic for this
     }
 
     /// <summary>

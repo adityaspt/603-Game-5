@@ -2461,6 +2461,10 @@ PrefabInstance:
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 196761403}
+    - target: {fileID: 1924513690100612171, guid: fcb73fd5c2c86394190608ef7d79f856, type: 3}
+      propertyPath: npcBlockPrefab
+      value: 
+      objectReference: {fileID: 2115630829041613190, guid: 65cda3f877de33b4b8537e1eef8e7343, type: 3}
     - target: {fileID: 1924513690100612172, guid: fcb73fd5c2c86394190608ef7d79f856, type: 3}
       propertyPath: m_Name
       value: PartyCanvas
