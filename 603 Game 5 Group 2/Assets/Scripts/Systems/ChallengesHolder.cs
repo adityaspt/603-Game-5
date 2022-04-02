@@ -20,10 +20,10 @@ public class ChallengesHolder : MonoBehaviour {
     }
 
     [SerializeField]
-    private GameObject endgameUI;
+    public GameObject endgameUI;
 
     [SerializeField]
-    private TextMeshProUGUI deathCountVal;
+    public TextMeshProUGUI deathCountVal;
 
     private string lastLoadedScene = "";
 
