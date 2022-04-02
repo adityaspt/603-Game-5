@@ -19,11 +19,11 @@ public class MansionGM : MonoBehaviour
     }
 
 
-    public void EndGameUI()
-    {
-        endgameUI.SetActive(true);
-        deathCountVal.GetComponent<TextMeshProUGUI>().text = GameManager.Instance.DeathCount.ToString(); //Set the death count value here
-    }
+    //public void EndGameUI()
+    //{
+    //    endgameUI.SetActive(true);
+    //    deathCountVal.GetComponent<TextMeshProUGUI>().text = GameManager.Instance.DeathCount.ToString(); //Set the death count value here
+    //}
 
     public void QuitGame()
     {

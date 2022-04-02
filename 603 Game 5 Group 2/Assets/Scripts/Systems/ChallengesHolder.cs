@@ -27,6 +27,7 @@ public class ChallengesHolder : MonoBehaviour {
 
     private string lastLoadedScene = "";
 
+    [SerializeField]
     private List<GameObject> allChallenges;
     private List<Challenge> incompleteChallenges;
     public bool AllChallengesCompleted {
@@ -79,6 +80,8 @@ public class ChallengesHolder : MonoBehaviour {
         foreach(GameObject c in allChallenges) {
             c.gameObject.SetActive(false);
         }
+
+        print("End game UI");
         endgameUI.SetActive(true);
         deathCountVal.GetComponent<TextMeshProUGUI>().text = GameManager.Instance.DeathCount.ToString(); //Set the death count value here
     }
