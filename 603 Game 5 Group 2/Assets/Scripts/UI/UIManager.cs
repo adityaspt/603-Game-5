@@ -46,7 +46,11 @@ public class UIManager : MonoBehaviour
         HideMenu(pauseObjects);
         HideMenu(optionObjects);
         HideMenu(inventoryObjects);
-        equipObjects[0].SetActive(false);
+        if (currentSceneName == "BarScene")
+        {
+            equipObjects[0].SetActive(false);
+        }
+       
     }
 
     // Update is called once per frame
