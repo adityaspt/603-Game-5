@@ -263,6 +263,10 @@ public class PartyUI : MonoBehaviour
     }
 
     //---------PARTY EQUIPMENT SELECT---------
+
+    /// <summary>
+    /// Shows Party UI (in Bar Scene)
+    /// </summary>
     public void EquipPersonSelect()
     {
         if (GameManager.Instance.PlayerParty.People.Count > 0)
@@ -279,6 +283,10 @@ public class PartyUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get reference to person from Party UI
+    /// </summary>
+    /// <returns>Reference to Person from Party UI</returns>
     public Person SelectPerson()
     {
         GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
@@ -287,13 +295,17 @@ public class PartyUI : MonoBehaviour
         return p;
     }
 
-    private void onPersonBlockClick()
+    /// <summary>
+    /// Disables Party UI after clicking
+    /// </summary>
+    public void onPersonBlockClick()
     {
         GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
         Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
 
         //Closing the button components and UI (for assigning person to a task)
         //Setting the player to walk again
+
         p = null;
         personBlockButton.SetActive(false);
         DeActivateButtons();

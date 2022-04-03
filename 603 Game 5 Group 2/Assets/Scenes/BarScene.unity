@@ -260,6 +260,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4200759842671104368, guid: f9a7a9bb7f66cc84490094ee8877c5b3, type: 3}
   m_PrefabInstance: {fileID: 105455708}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &272736842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3647781014329060884, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
+  m_PrefabInstance: {fileID: 3647781014056389726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &334985338 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2397847633414667939, guid: d41ff8588ef4b442ca10ddec44321a0d, type: 3}
@@ -485,6 +496,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &442603299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3647781014226295677, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
+  m_PrefabInstance: {fileID: 3647781014056389726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &487951684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,6 +682,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 592039134743369595, guid: 8f21ea4cf590c403dbba823120fe2856, type: 3}
   m_PrefabInstance: {fileID: 592039135056661231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109213965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3647781013014417235, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
+  m_PrefabInstance: {fileID: 3647781014056389726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342263983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,6 +2089,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
+      propertyPath: eB1
+      value: 
+      objectReference: {fileID: 272736842}
+    - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
+      propertyPath: eB2
+      value: 
+      objectReference: {fileID: 1109213965}
+    - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
+      propertyPath: eB3
+      value: 
+      objectReference: {fileID: 442603299}
     - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
       propertyPath: partyChooseUI
       value: 

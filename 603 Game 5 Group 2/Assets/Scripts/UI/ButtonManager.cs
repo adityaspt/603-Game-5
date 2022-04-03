@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GameSystems;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -86,7 +87,16 @@ public class ButtonManager : MonoBehaviour
     {
         Text t = transform.GetComponentInChildren<Text>();
         Debug.Log(t.text);
-        //eG.GetComponent<EquipmentGiver>().ChooseEquipment()
+
+        // Finding equipment based on text
+        foreach (Equipment e in eG.GetComponent<EquipmentGiver>().AvailableEquipment)
+        {
+            if (e.Name == t.text)
+            {
+                Debug.Log("Equipment Match");
+                eG.GetComponent<EquipmentGiver>().ChooseEquipment(e);
+            }
+        }
     }
 
     public void OnCloseEquip()

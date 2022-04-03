@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystems;
+using UnityEngine.UI;
 
 public class EquipmentGiver : MonoBehaviour {
     [SerializeField]
@@ -13,6 +14,11 @@ public class EquipmentGiver : MonoBehaviour {
     private GameObject equipmentChooseUI;
     [SerializeField]
     private GameObject partyChooseUI;
+
+    //-----UI BUTTONS-----
+    [SerializeField] private Button eB1;
+    [SerializeField] private Button eB2;
+    [SerializeField] private Button eB3;
 
     private bool available;
 
@@ -73,16 +79,18 @@ public class EquipmentGiver : MonoBehaviour {
         // NOTE: I've made ChosenEquipment a public property, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChosenEquipment on this object
         // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
         // NOTE: Person.ForceEquip overrides previous equipment, Person.Equip does not and returns false if the Person already has one
-        Person p = PartyUI.partyUIinstance.SelectPerson();
+        //Person p = PartyUI.partyUIinstance.onPersonBlockClick();
 
-        p.ForceEquip(e); // The player only gets one chance to choose who to equip
+        //p.ForceEquip(e);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(available) {
             if(collision.gameObject.CompareTag("Player")) {
                 // TODO: Populate EquipmentChooseUI with the items in availableEquipment
-
+                eB1.GetComponentInChildren<Text>().text = availableEquipment[0].Name;
+                eB2.GetComponentInChildren<Text>().text = availableEquipment[1].Name;
+                eB3.GetComponentInChildren<Text>().text = availableEquipment[2].Name;
 
                 // Show the ui
                 equipmentChooseUI.SetActive(true);
