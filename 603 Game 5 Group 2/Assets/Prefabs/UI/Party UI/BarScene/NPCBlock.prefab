@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 6217196739052295498}
   - component: {fileID: 8870543224368013635}
   - component: {fileID: 1459493384028809671}
+  - component: {fileID: 5063754422301134200}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1247,4 +1248,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8870543224368013635}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5063754422301134200}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: OnPersonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5063754422301134200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791658034395863373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d440ed23b8768634daa239145f27e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uI: {fileID: 0}
+  gM: {fileID: 0}
+  eG: {fileID: 0}

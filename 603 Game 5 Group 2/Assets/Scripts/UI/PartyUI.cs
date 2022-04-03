@@ -37,6 +37,7 @@ public class PartyUI : MonoBehaviour
     [SerializeField]
     private Challenge currentChallengeHolder;
 
+    [Tooltip("Equipment Giver")][SerializeField] private GameObject eG;
 
     private void Awake()
     {
@@ -287,27 +288,16 @@ public class PartyUI : MonoBehaviour
     /// Get reference to person from Party UI
     /// </summary>
     /// <returns>Reference to Person from Party UI</returns>
-    public Person SelectPerson()
+    public Person SelectPerson(Person p)
     {
-        GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
-        Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
-
         return p;
     }
 
     /// <summary>
     /// Disables Party UI after clicking
     /// </summary>
-    public void onPersonBlockClick()
+    public void buttonOnClickPersonBlockEquip()
     {
-        GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
-        Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
-
-        //Closing the button components and UI (for assigning person to a task)
-        //Setting the player to walk again
-
-        p = null;
-        personBlockButton.SetActive(false);
         DeActivateButtons();
         PartyCanvas.SetActive(false);
         EnablePlayerController();

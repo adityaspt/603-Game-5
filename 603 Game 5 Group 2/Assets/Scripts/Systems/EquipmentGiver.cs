@@ -65,7 +65,7 @@ public class EquipmentGiver : MonoBehaviour {
     /// <summary>
     /// Chooses the equipment and hides the selection UI
     /// </summary>
-    /// <param name="e"></param>
+    /// <param name="e">The equipment selected</param>
     public void ChooseEquipment(Equipment e) {
         chosenEquipment = e;
         equipmentChooseUI.SetActive(false);
@@ -73,18 +73,30 @@ public class EquipmentGiver : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = unavailableSprite;
         GameManager.Instance.ChallengeCompleted = false;
 
-        // TODO: Show the PartyUI
-        PartyUI.partyUIinstance.EquipPersonSelect();
         // TODO: Clicking a party member calls partyMember.Equip(chosenEquipment);
         // NOTE: I've made ChosenEquipment a public property, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChosenEquipment on this object
         // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
         // NOTE: Person.ForceEquip overrides previous equipment, Person.Equip does not and returns false if the Person already has one
-        
-        //Person p = PartyUI.partyUIinstance.onPersonBlockClick();
+    }
 
-        //p.ForceEquip(e);
+    /// <summary>
+    /// Equip the chosen equipment onto the person selected
+    /// </summary>
+    /// <param name="p">The person selected</param>
+    public void ChooseEquipment(Person p)
+    {
+        p.ForceEquip(chosenEquipment);
 
-        // ^^^ This currently doesn't work
+        PartyUI.partyUIinstance.buttonOnClickPersonBlockEquip();
+    }
+
+    /// <summary>
+    /// Show the party menu for the equipment selection
+    /// </summary>
+    public void ShowEquipmentParty()
+    {
+        // TODO: Show the PartyUI
+        PartyUI.partyUIinstance.EquipPersonSelect();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

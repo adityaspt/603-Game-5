@@ -85,6 +85,7 @@ public class ButtonManager : MonoBehaviour
     //---------EQUIPMENT---------
     public void OnEquip()
     {
+        eG = GameObject.Find("EquipmentGiver");
         Text t = transform.GetComponentInChildren<Text>();
         Debug.Log(t.text);
 
@@ -94,6 +95,7 @@ public class ButtonManager : MonoBehaviour
             if (e.Name == t.text)
             {
                 Debug.Log("Equipment Match");
+                eG.GetComponent<EquipmentGiver>().ShowEquipmentParty();
                 eG.GetComponent<EquipmentGiver>().ChooseEquipment(e);
             }
         }
@@ -103,5 +105,15 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Equip Close");
         uI.GetComponent<UIManager>().ButtonPress("equip");
+    }
+
+    public void OnPersonClick()
+    {
+        eG = GameObject.Find("EquipmentGiver");
+        Debug.Log("Clicked on Person");
+        GameObject personBlockButton = transform.parent.gameObject;
+        Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
+
+        eG.GetComponent<EquipmentGiver>().ChooseEquipment(p);
     }
 }
