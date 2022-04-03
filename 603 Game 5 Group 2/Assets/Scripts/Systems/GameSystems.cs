@@ -51,6 +51,26 @@ namespace GameSystems {
                 return "Citizen";
             }
         }
+
+        private static Equipment[] PremadeEquips = new[] {
+            new Equipment("Wrench", new[] { 2, 0, 0 }),
+            new Equipment("Gloves", new[] { 0, 2, 0 }),
+            new Equipment("Glasses", new[] { 0, 0, 2 }),
+            new Equipment("Stereroids", new[] { 4, -1, -1 }),
+            new Equipment("Levodopa", new[] { -1, 4, -1 }),
+            new Equipment("Adderall", new[] { -1, -1, 4 }),
+            new Equipment("Toolkit", new[] { 1, 1, 1 })
+        };
+
+        /// <summary>
+        /// Returns a random equipment from the PremadeEquips list
+        /// </summary>
+        /// <returns></returns>
+        public static Equipment GetRandomEquipment() {
+            int equipmentIndex = Random.Range(0, PremadeEquips.Length);
+            Equipment equipment = PremadeEquips[equipmentIndex];
+            return equipment;
+        }
     }
 
     public class Party {
@@ -194,6 +214,15 @@ namespace GameSystems {
                 return false;
             }
         }
+
+        /// <summary>
+        /// Overwrites the person' current equipment with the given equipment
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public void ForceEquip(Equipment e) {
+            heldEquipment = e;
+        }
     }
 
     public class Equipment {
@@ -233,6 +262,19 @@ namespace GameSystems {
             this.name = name;
             this.statImprovements = statImprovements;
             this.image = image;
+        }
+
+        public Equipment() {
+            // Grab a random equipment
+            Equipment equipment = SystemVariables.GetRandomEquipment();
+
+            // Apply the stats
+            this.name = equipment.name;
+            this.statImprovements = new int[3];
+            for(int i = 0; i < this.statImprovements.Length; i++) {
+                this.statImprovements[i] = equipment.statImprovements[i];
+            }
+            this.image = equipment.image;
         }
     }
 }

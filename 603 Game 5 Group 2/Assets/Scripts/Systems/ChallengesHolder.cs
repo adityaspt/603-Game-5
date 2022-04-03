@@ -59,6 +59,7 @@ public class ChallengesHolder : MonoBehaviour {
 
     public void CompleteChallenge(Challenge c) {
         incompleteChallenges.Remove(c);
+        GameManager.Instance.ChallengeCompleted = true;
         if(incompleteChallenges.Count == 0) {
             EndGameUI();
         }
