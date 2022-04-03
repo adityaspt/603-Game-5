@@ -79,9 +79,12 @@ public class EquipmentGiver : MonoBehaviour {
         // NOTE: I've made ChosenEquipment a public property, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChosenEquipment on this object
         // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
         // NOTE: Person.ForceEquip overrides previous equipment, Person.Equip does not and returns false if the Person already has one
+        
         //Person p = PartyUI.partyUIinstance.onPersonBlockClick();
 
         //p.ForceEquip(e);
+
+        // ^^^ This currently doesn't work
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -101,6 +104,8 @@ public class EquipmentGiver : MonoBehaviour {
                     // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
                     // NOTE: I created an overload of ChooseEquipment that takes in an int. That int corresponds to the index of the equipment in the AvailableEquipment array. Use
                     //            whichever one you want.
+
+                // ^^^ This was done in the ButtonManager
             }
         }
     }
