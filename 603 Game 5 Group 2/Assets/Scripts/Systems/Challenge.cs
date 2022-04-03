@@ -90,6 +90,8 @@ public class Challenge : MonoBehaviour
     /// <param name="p"></param>
     public void Attempt(Person p)
     {
+        print("Attempting challenge");
+
         // Bailout
         if (isCompleted)
         {
@@ -160,7 +162,7 @@ public class Challenge : MonoBehaviour
             {
                 print("Challenge " + challengeTitle + " hit");
                 PartyUI.partyUIinstance.StartPersonSelect(this);
-                //GetComponent<BoxCollider2D>().isTrigger = false;
+                
             }
         }
     }

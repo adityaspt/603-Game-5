@@ -12,6 +12,7 @@ public class MansionGM : MonoBehaviour
 
     [SerializeField]
     GameObject deathCountVal;
+    private Player player;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class MansionGM : MonoBehaviour
 
     public void QuitGame()
     {
+        player.SaveData();
         Application.Quit();
     }
 }

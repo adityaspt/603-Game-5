@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using GameSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PartyUI : MonoBehaviour
 {
@@ -20,46 +21,58 @@ public class PartyUI : MonoBehaviour
     private GameObject emptyPartyText;
 
     [SerializeField]
-    private GameObject npcBlockPrefab;
+    private GameObject fullPartyText;
 
     [SerializeField]
-    private GameObject cancelButton; //For Mansion scene
+    private GameObject npcBlockPrefab;
+
+    //For Mansion scene
+    [SerializeField]
+    private GameObject cancelButton;
 
     private PlayerController player;
+
+    [Header("Pointer references")]
+
+    [SerializeField]
+    private Challenge currentChallengeHolder;
+
 
     private void Awake()
     {
         partyUIinstance = this;
     }
 
+
     private void Start()
     {
         player = GameObject.FindObjectOfType<PlayerController>();
-        currentPartyPeople= GameManager.Instance.PlayerParty.People.Count;
+        currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
     }
+
 
     /// <summary>
     /// Destroys all npc blocks under partycanvas-->panel //Not gonna be used
     /// </summary>
     public void DestroyAllChild_NPCblocks()
     {
-        //currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
         for (int i = currentPartyPeople - 1; i >= 0; i--)
         {
             Destroy(PartyCanvas.transform.GetChild(i).gameObject);
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            print("Tab button");
             currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
-            if (PartyCanvas.activeSelf) //Sets when the NPC Canvas is reset
+
+            //Sets when the NPC Canvas is reset
+            if (PartyCanvas.activeSelf)
             {
-                //DestroyAllChild_NPCblocks();
                 PartyCanvas.SetActive(false);
                 return;
             }
@@ -67,7 +80,8 @@ public class PartyUI : MonoBehaviour
             {
                 if (currentPartyPeople > 0)
                 {
-                    emptyPartyText.SetActive(false); //If this object was active, make sure to deactivate it
+                    //Do this because, If this object was active, make sure to deactivate it
+                    emptyPartyText.SetActive(false);
                     PartyCanvas.SetActive(true);
                     ShowNPCBlocks();
                 }
@@ -79,21 +93,24 @@ public class PartyUI : MonoBehaviour
         }
     }
 
+
+
     /// <summary>
     /// This Function loads the required number of NPC blocks in party UI and then calls SetPartyValues function
     /// </summary>
     public void ShowNPCBlocks()
     {
-        
-        print(GameManager.Instance.PlayerParty.People.Count + " people in party");
         for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
         {
-            GameObject npcBlockObj = GameObject.Instantiate(npcBlockPrefab,PartyCanvas.transform);
-            SetPartyBlockValues(npcBlockObj,i);
+            GameObject npcBlockObj = GameObject.Instantiate(npcBlockPrefab, PartyCanvas.transform);
+
+            //Do this while setting NPC block in Mansion scene only and add button function then only
+            if (SceneManager.GetActiveScene().name == "MansionTest")
+                npcBlockObj.transform.GetChild(6).GetComponent<Button>().onClick.AddListener(buttonOnClickPersonBlock);
+            SetPartyBlockValues(npcBlockObj, i);
         }
-            //PartyCanvas.transform.GetChild(i).gameObject.SetActive(true);
-        
     }
+
 
     /// <summary>
     /// This function sets all the hired npc person's values in the Party UI
@@ -109,6 +126,8 @@ public class PartyUI : MonoBehaviour
         //Still need to write logic for this
     }
 
+
+
     /// <summary>
     /// Appear and disappear coroutine, Use it anywhere this script is used
     /// </summary>
@@ -123,6 +142,8 @@ public class PartyUI : MonoBehaviour
         print("disappear " + g);
     }
 
+
+
     /// <summary>
     /// Stop the player movement and animation if any
     /// </summary>
@@ -132,7 +153,7 @@ public class PartyUI : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = false;
     }
 
-    Challenge currentChallengeHolder;
+
 
     /// <summary>
     /// To be executed in the mansion scene
@@ -143,7 +164,6 @@ public class PartyUI : MonoBehaviour
         {
             currentChallengeHolder = challenge;
             Cursor.visible = true;
-            //currentPartyPeople = GameManager.Instance.PlayerParty.People.Count;
             PartyCanvas.SetActive(true);
             cancelButton.SetActive(true);
             ShowNPCBlocks();
@@ -156,40 +176,48 @@ public class PartyUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Activate NPC block buttons for Mansion Scene
+    /// </summary>
     void ActivateButtons()
     {
         for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
-            PartyCanvas.transform.GetChild(i).GetChild(6).GetComponent<Button>().gameObject.SetActive(true); //Hardcoded now but change later
+            PartyCanvas.transform.GetChild(i).GetChild(6).gameObject.SetActive(true); //Hardcoded now but change later
     }
 
+
+    /// <summary>
+    /// Deactivate NPC block buttons for Mansion Scene
+    /// </summary>
     void DeActivateButtons()
     {
-        for (int i = 0; i < 4; i++)
-            PartyCanvas.transform.GetChild(i).GetChild(6).GetComponent<Button>().gameObject.SetActive(false); //Hardcoded now but change later
+        for (int i = 0; i < GameManager.Instance.PlayerParty.People.Count; i++)
+            PartyCanvas.transform.GetChild(i).GetChild(6).gameObject.SetActive(false);
     }
 
 
     /// <summary>
     /// TO be executed in the mansion scene 
     /// </summary>
-    public void pressPersonBlock()
+    public void buttonOnClickPersonBlock()
     {
         GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
         Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
-        //print("Person clicked " + p.Name);
-        //currentChallengeHolder.Attempt(GameManager.Instance.PlayerParty.People[0]);
+
         currentChallengeHolder.Attempt(p);
 
-        //Closing loop
+        //Closing the button components and UI (for assigning person to a task)
+        //Setting the player to walk again
         p = null;
         personBlockButton.SetActive(false);
         DeActivateButtons();
         PartyCanvas.SetActive(false);
         cancelButton.SetActive(false);
-        print("Current party member count " + GameManager.Instance.PlayerParty.People.Count);
         EnablePlayerController();
         ReleaseAnyHolderReferences();
+        Cursor.visible = false;
     }
+
 
     /// <summary>
     /// Move the player again, after freezing them
@@ -198,6 +226,7 @@ public class PartyUI : MonoBehaviour
     {
         player.GetComponent<PlayerController>().enabled = true;
     }
+
 
     /// <summary>
     /// Clear all the holder variables
@@ -215,8 +244,13 @@ public class PartyUI : MonoBehaviour
     {
         PartyCanvas.SetActive(false);
         cancelButton.SetActive(false);
-        print("Current party member count " + GameManager.Instance.PlayerParty.People.Count);
         EnablePlayerController();
         ReleaseAnyHolderReferences();
+    }
+
+
+    public void ShowAndVanishFullPartyText()
+    {
+        StartCoroutine(ActiveAndDisappearObject(2f,fullPartyText));
     }
 }

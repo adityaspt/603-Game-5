@@ -20,10 +20,10 @@ public class ChallengesHolder : MonoBehaviour {
     }
 
     [SerializeField]
-    private GameObject endgameUI;
+    public GameObject endgameUI;
 
     [SerializeField]
-    private TextMeshProUGUI deathCountVal;
+    public TextMeshProUGUI deathCountVal;
 
     private string lastLoadedScene = "";
 
@@ -84,6 +84,7 @@ public class ChallengesHolder : MonoBehaviour {
 
         print("End game UI");
         endgameUI.SetActive(true);
+        Cursor.visible = true;
         deathCountVal.GetComponent<TextMeshProUGUI>().text = GameManager.Instance.DeathCount.ToString(); //Set the death count value here
     }
 
