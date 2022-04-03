@@ -14,6 +14,7 @@ public class EquipmentGiver : MonoBehaviour {
     private GameObject equipmentChooseUI;
     [SerializeField]
     private GameObject partyChooseUI;
+    [Tooltip("UI Manager")][SerializeField] private GameObject uI;
 
     //-----UI BUTTONS-----
     [SerializeField] private Button eB1;
@@ -68,7 +69,7 @@ public class EquipmentGiver : MonoBehaviour {
     /// <param name="e">The equipment selected</param>
     public void ChooseEquipment(Equipment e) {
         chosenEquipment = e;
-        equipmentChooseUI.SetActive(false);
+        uI.GetComponent<UIManager>().HideEquipMenu();
         available = false;
         GetComponent<SpriteRenderer>().sprite = unavailableSprite;
         GameManager.Instance.ChallengeCompleted = false;
@@ -102,19 +103,26 @@ public class EquipmentGiver : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(available) {
-            if(collision.gameObject.CompareTag("Player")) {
+            if(collision.gameObject.CompareTag("Player") && GameManager.Instance.PlayerParty.People.Count > 0) {
                 Time.timeScale = 0;
 
                 partyChooseUI.transform.GetChild(0).gameObject.SetActive(false);
 
-                // TODO: Populate EquipmentChooseUI with the items in availableEquipment
-                eB1.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[0].Name, availableEquipment[0].StatImprovements[0], availableEquipment[0].StatImprovements[1], availableEquipment[0].StatImprovements[2]);
-                eB2.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[1].Name, availableEquipment[1].StatImprovements[0], availableEquipment[1].StatImprovements[1], availableEquipment[1].StatImprovements[2]);
-                eB3.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[2].Name, availableEquipment[2].StatImprovements[0], availableEquipment[2].StatImprovements[1], availableEquipment[2].StatImprovements[2]);
-
                 // Show the ui
-                equipmentChooseUI.SetActive(true);
+                uI.GetComponent<UIManager>().ShowEquipMenu();
                 Cursor.visible = true;
+
+                // TODO: Populate EquipmentChooseUI with the items in availableEquipment
+                // NAMES
+                eB1.transform.GetChild(0).GetComponent<Text>().text = availableEquipment[0].Name;
+                eB2.transform.GetChild(0).GetComponent<Text>().text = availableEquipment[1].Name;
+                eB3.transform.GetChild(0).GetComponent<Text>().text = availableEquipment[2].Name;
+
+                eB1.transform.GetChild(1).GetComponent<Text>().text = string.Format("STR +({0})  DEX +({1})  INT +({2})", availableEquipment[0].StatImprovements[0], availableEquipment[0].StatImprovements[1], availableEquipment[0].StatImprovements[2]);
+                eB2.transform.GetChild(1).GetComponent<Text>().text = string.Format("STR +({0})  DEX +({1})  INT +({2})", availableEquipment[1].StatImprovements[0], availableEquipment[1].StatImprovements[1], availableEquipment[1].StatImprovements[2]);
+                eB3.transform.GetChild(1).GetComponent<Text>().text = string.Format("STR +({0})  DEX +({1})  INT +({2})", availableEquipment[2].StatImprovements[0], availableEquipment[2].StatImprovements[1], availableEquipment[2].StatImprovements[2]);
+
+
 
                 // TODO: Clicking an equipment equipmentGiver.ChooseEquipment(whateverEquipmentYouJustClickedOn);
                 // NOTE: I've made ChooseEquipment a public method, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChooseEquipment on this object

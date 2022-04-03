@@ -260,17 +260,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4200759842671104368, guid: f9a7a9bb7f66cc84490094ee8877c5b3, type: 3}
   m_PrefabInstance: {fileID: 105455708}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &272736842 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3647781014329060884, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
-  m_PrefabInstance: {fileID: 3647781014056389726}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &334985338 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2397847633414667939, guid: d41ff8588ef4b442ca10ddec44321a0d, type: 3}
@@ -2074,6 +2063,17 @@ PrefabInstance:
       objectReference: {fileID: 746090724}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
+--- !u!114 &3647781014056389727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3599019427895641960, guid: 27592823a936adc42a55fb32eaa1eaa7, type: 3}
+  m_PrefabInstance: {fileID: 3647781014056389726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4209346143470901432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2090,9 +2090,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
+      propertyPath: uI
+      value: 
+      objectReference: {fileID: 105455710}
+    - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
       propertyPath: eB1
       value: 
-      objectReference: {fileID: 272736842}
+      objectReference: {fileID: 3647781014056389727}
     - target: {fileID: 4209346143670571379, guid: 6dcc66a275bbb7f4c8fdcdaec3d829d9, type: 3}
       propertyPath: eB2
       value: 

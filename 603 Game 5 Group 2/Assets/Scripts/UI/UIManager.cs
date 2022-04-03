@@ -46,10 +46,7 @@ public class UIManager : MonoBehaviour
         HideMenu(pauseObjects);
         HideMenu(optionObjects);
         HideMenu(inventoryObjects);
-        if (currentSceneName == "BarScene")
-        {
-            equipObjects[0].SetActive(false);
-        }
+        HideMenu(equipObjects);
        
     }
 
@@ -65,6 +62,7 @@ public class UIManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.Escape))
                     {
                         MenuControl(pauseObjects, MenuState.Pause);
+                        Cursor.visible = true;
                     }
                     break;
                 }
@@ -74,6 +72,7 @@ public class UIManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     MenuControl(pauseObjects, MenuState.Game);
+                    Cursor.visible = false;
                 }
                 break;
             case MenuState.Options:
@@ -81,6 +80,7 @@ public class UIManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     MenuControl(optionObjects, MenuState.Game);
+                    Cursor.visible = false;
                 }
                 break;
             case MenuState.Inventory:
@@ -88,6 +88,7 @@ public class UIManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     MenuControl(inventoryObjects, MenuState.Game);
+                    Cursor.visible = false;
                 }
                 break;
             // If somehow not in Game state, Menu State, or Options state, assume it is menu and can go back to game state
@@ -96,6 +97,7 @@ public class UIManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     MenuControl(pauseObjects, MenuState.Game);
+                    Cursor.visible = false;
                 }
                 break;
         }
@@ -223,5 +225,21 @@ public class UIManager : MonoBehaviour
             equipObjects[0].SetActive(false);
             Cursor.visible = false;
         }
+    }
+
+    /// <summary>
+    /// Show Equip menu
+    /// </summary>
+    public void ShowEquipMenu()
+    {
+        ShowMenu(equipObjects);
+    }
+
+    /// <summary>
+    /// Hide Equip menu
+    /// </summary>
+    public void HideEquipMenu()
+    {
+        HideMenu(equipObjects);
     }
 }

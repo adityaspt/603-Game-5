@@ -86,7 +86,7 @@ public class ButtonManager : MonoBehaviour
     public void OnEquip()
     {
         eG = GameObject.Find("EquipmentGiver");
-        Text t = transform.GetComponentInChildren<Text>();
+        Text t = transform.GetChild(0).GetComponent<Text>();
         Debug.Log(t.text);
 
         // Finding equipment based on text
