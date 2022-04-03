@@ -84,8 +84,8 @@ public class ButtonManager : MonoBehaviour
     //---------EQUIPMENT---------
     public void OnEquip()
     {
-        Text t = this.GetComponent<Text>();
-        Debug.Log(t);
+        Text t = transform.GetComponentInChildren<Text>();
+        Debug.Log(t.text);
         //eG.GetComponent<EquipmentGiver>().ChooseEquipment()
     }
 

@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 3647781013014417233}
   - component: {fileID: 3647781013014417232}
   - component: {fileID: 3647781013014417235}
+  - component: {fileID: 7968193804415727227}
   m_Layer: 0
   m_Name: Equipment Button (1)
   m_TagString: showOnEquip
@@ -303,18 +304,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3647781013014417237}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7968193804415727227}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: OnEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7968193804415727227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647781013014417237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d440ed23b8768634daa239145f27e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uI: {fileID: 0}
+  gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!1 &3647781013181125927
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +676,7 @@ GameObject:
   - component: {fileID: 3647781014226295675}
   - component: {fileID: 3647781014226295674}
   - component: {fileID: 3647781014226295677}
+  - component: {fileID: 8991460569227487836}
   m_Layer: 0
   m_Name: Equipment Button (2)
   m_TagString: showOnEquip
@@ -769,18 +786,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3647781014226295679}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8991460569227487836}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: OnEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8991460569227487836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647781014226295679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d440ed23b8768634daa239145f27e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uI: {fileID: 0}
+  gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!1 &3647781014257191526
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +904,7 @@ GameObject:
   - component: {fileID: 3647781014329060882}
   - component: {fileID: 3647781014329060885}
   - component: {fileID: 3647781014329060884}
+  - component: {fileID: 8374500676229807143}
   m_Layer: 0
   m_Name: Equipment Button
   m_TagString: showOnEquip
@@ -981,18 +1014,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3647781014329060886}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8374500676229807143}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: OnEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8374500676229807143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647781014329060886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d440ed23b8768634daa239145f27e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uI: {fileID: 0}
+  gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!1 &3647781014341121885
 GameObject:
   m_ObjectHideFlags: 0
