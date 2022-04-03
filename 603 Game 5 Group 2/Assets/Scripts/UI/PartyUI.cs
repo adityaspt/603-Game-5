@@ -156,7 +156,7 @@ public class PartyUI : MonoBehaviour
     /// <summary>
     /// Stop the player movement and animation if any
     /// </summary>
-    void StopPlayerController()
+    public void StopPlayerController()
     {
         player.playerAnimator.SetFloat("Speed", 0); //Stop the player's animation with speed parameter in animator
         player.GetComponent<PlayerController>().enabled = false;
@@ -224,7 +224,7 @@ public class PartyUI : MonoBehaviour
         cancelButton.SetActive(false);
         EnablePlayerController();
         ReleaseAnyHolderReferences();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
 

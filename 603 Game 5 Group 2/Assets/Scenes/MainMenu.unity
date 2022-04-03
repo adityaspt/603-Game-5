@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 809911277}
   gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!114 &55890305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1027827326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 809911277}
   gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!1 &1138454969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 809911277}
   gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!114 &1584055327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,6 +1930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 809911277}
   gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!114 &1709593078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,6 +2154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 809911277}
   gM: {fileID: 0}
+  eG: {fileID: 0}
 --- !u!114 &2100354011
 MonoBehaviour:
   m_ObjectHideFlags: 0

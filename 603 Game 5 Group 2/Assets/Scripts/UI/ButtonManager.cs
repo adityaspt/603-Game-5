@@ -105,6 +105,7 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Equip Close");
         uI.GetComponent<UIManager>().ButtonPress("equip");
+        Time.timeScale = 1;
     }
 
     public void OnPersonClick()

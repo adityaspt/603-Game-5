@@ -88,6 +88,7 @@ public class EquipmentGiver : MonoBehaviour {
         p.ForceEquip(chosenEquipment);
 
         PartyUI.partyUIinstance.buttonOnClickPersonBlockEquip();
+        Time.timeScale = 1;
     }
 
     /// <summary>
@@ -102,20 +103,24 @@ public class EquipmentGiver : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if(available) {
             if(collision.gameObject.CompareTag("Player")) {
+                Time.timeScale = 0;
+
+                partyChooseUI.transform.GetChild(0).gameObject.SetActive(false);
+
                 // TODO: Populate EquipmentChooseUI with the items in availableEquipment
-                eB1.GetComponentInChildren<Text>().text = availableEquipment[0].Name;
-                eB2.GetComponentInChildren<Text>().text = availableEquipment[1].Name;
-                eB3.GetComponentInChildren<Text>().text = availableEquipment[2].Name;
+                eB1.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[0].Name, availableEquipment[0].StatImprovements[0], availableEquipment[0].StatImprovements[1], availableEquipment[0].StatImprovements[2]);
+                eB2.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[1].Name, availableEquipment[1].StatImprovements[0], availableEquipment[1].StatImprovements[1], availableEquipment[1].StatImprovements[2]);
+                eB3.GetComponentInChildren<Text>().text = string.Format("{0} \n STR +({1})  DEX +({2})  INT +({3})", availableEquipment[2].Name, availableEquipment[2].StatImprovements[0], availableEquipment[2].StatImprovements[1], availableEquipment[2].StatImprovements[2]);
 
                 // Show the ui
                 equipmentChooseUI.SetActive(true);
                 Cursor.visible = true;
 
                 // TODO: Clicking an equipment equipmentGiver.ChooseEquipment(whateverEquipmentYouJustClickedOn);
-                    // NOTE: I've made ChooseEquipment a public method, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChooseEquipment on this object
-                    // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
-                    // NOTE: I created an overload of ChooseEquipment that takes in an int. That int corresponds to the index of the equipment in the AvailableEquipment array. Use
-                    //            whichever one you want.
+                // NOTE: I've made ChooseEquipment a public method, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChooseEquipment on this object
+                // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
+                // NOTE: I created an overload of ChooseEquipment that takes in an int. That int corresponds to the index of the equipment in the AvailableEquipment array. Use
+                //            whichever one you want.
 
                 // ^^^ This was done in the ButtonManager
             }

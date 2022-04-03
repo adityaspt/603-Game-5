@@ -64,6 +64,7 @@ public class PopupSystem : MonoBehaviour {
         messageWindowTitle.text = title;
         messageWindowMessage.text = indentation + message;
         messageWindow.SetActive(true);
+        Cursor.visible = true;
     }
 
     /// <summary>
@@ -71,6 +72,7 @@ public class PopupSystem : MonoBehaviour {
     /// </summary>
     public void CloseMessage() {
         messageWindow.SetActive(false);
+        Cursor.visible = false;
     }
 
     /// <summary>
@@ -81,6 +83,7 @@ public class PopupSystem : MonoBehaviour {
         CloseAll();
         noticeWindowMessage.text = indentation + message;
         noticeWindow.SetActive(true);
+        Cursor.visible = true;
     }
 
     /// <summary>
@@ -88,5 +91,6 @@ public class PopupSystem : MonoBehaviour {
     /// </summary>
     public void CloseNotice() {
         noticeWindow.SetActive(false);
+        Cursor.visible = false;
     }
 }
