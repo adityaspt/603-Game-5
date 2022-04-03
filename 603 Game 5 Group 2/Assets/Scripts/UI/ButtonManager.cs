@@ -4,11 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
     [Tooltip("UI Manager")][SerializeField] private GameObject uI;
     [Tooltip("Game Manager")][SerializeField] private GameObject gM;
+    [Tooltip("EquipmentGiver")][SerializeField] private GameObject eG;
 
     //---------GENERAL BUTTONS---------
 
@@ -77,5 +79,19 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Inventory");
         uI.GetComponent<UIManager>().ButtonPress("inventory");
+    }
+
+    //---------EQUIPMENT---------
+    public void OnEquip()
+    {
+        Text t = this.GetComponent<Text>();
+        Debug.Log(t);
+        //eG.GetComponent<EquipmentGiver>().ChooseEquipment()
+    }
+
+    public void OnCloseEquip()
+    {
+        Debug.Log("Clicked Equip Close");
+        uI.GetComponent<UIManager>().ButtonPress("equip");
     }
 }

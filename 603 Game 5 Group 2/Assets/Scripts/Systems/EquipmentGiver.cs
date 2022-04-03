@@ -68,11 +68,14 @@ public class EquipmentGiver : MonoBehaviour {
         GameManager.Instance.ChallengeCompleted = false;
 
         // TODO: Show the PartyUI
-
+        PartyUI.partyUIinstance.EquipPersonSelect();
         // TODO: Clicking a party member calls partyMember.Equip(chosenEquipment);
-            // NOTE: I've made ChosenEquipment a public property, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChosenEquipment on this object
-            // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
-            // NOTE: Person.ForceEquip overrides previous equipment, Person.Equip does not and returns false if the Person already has one
+        // NOTE: I've made ChosenEquipment a public property, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChosenEquipment on this object
+        // NOTE: The code for this may have to go into another file. I'm just writing these comments here to keep them all in one place
+        // NOTE: Person.ForceEquip overrides previous equipment, Person.Equip does not and returns false if the Person already has one
+        Person p = PartyUI.partyUIinstance.SelectPerson();
+
+        p.ForceEquip(e); // The player only gets one chance to choose who to equip
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -80,8 +83,10 @@ public class EquipmentGiver : MonoBehaviour {
             if(collision.gameObject.CompareTag("Player")) {
                 // TODO: Populate EquipmentChooseUI with the items in availableEquipment
 
+
                 // Show the ui
                 equipmentChooseUI.SetActive(true);
+                Cursor.visible = true;
 
                 // TODO: Clicking an equipment equipmentGiver.ChooseEquipment(whateverEquipmentYouJustClickedOn);
                     // NOTE: I've made ChooseEquipment a public method, so if you need to access it from another script you can GetComponent<EquipmentGiver>().ChooseEquipment on this object

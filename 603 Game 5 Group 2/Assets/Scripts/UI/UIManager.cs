@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] pauseObjects;
     [SerializeField] private GameObject[] optionObjects;
     [SerializeField] private GameObject[] inventoryObjects;
+    [SerializeField] private GameObject[] equipObjects;
 
     public MenuState currentMenuState = MenuState.Game;
 
@@ -39,11 +40,13 @@ public class UIManager : MonoBehaviour
         pauseObjects = GameObject.FindGameObjectsWithTag("showOnPause");
         optionObjects = GameObject.FindGameObjectsWithTag("showOnOptions");
         inventoryObjects = GameObject.FindGameObjectsWithTag("showOnInventory");
+        equipObjects = GameObject.FindGameObjectsWithTag("showOnEquip");
 
         // Hide menus
         HideMenu(pauseObjects);
         HideMenu(optionObjects);
         HideMenu(inventoryObjects);
+        equipObjects[0].SetActive(false);
     }
 
     // Update is called once per frame
@@ -209,6 +212,12 @@ public class UIManager : MonoBehaviour
         else if (name == "back")
         {
             MenuControl(pauseObjects, MenuState.Pause);
+        }
+        // If clicked close
+        else if (name == "equip")
+        {
+            equipObjects[0].SetActive(false);
+            Cursor.visible = false;
         }
     }
 }

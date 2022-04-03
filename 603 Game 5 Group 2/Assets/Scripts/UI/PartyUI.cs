@@ -123,6 +123,14 @@ public class PartyUI : MonoBehaviour
         npcBlockObj.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Strength.ToString(); //For Strength
         npcBlockObj.transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Dexterity.ToString(); //For Dexterity
         npcBlockObj.transform.GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].Intelligence.ToString(); //For Intelligence
+        if (GameManager.Instance.PlayerParty.People[personIndex].HeldEquipment == null)
+        {
+            npcBlockObj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Nothing equipped";
+        }
+        else
+        {
+            npcBlockObj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = GameManager.Instance.PlayerParty.People[personIndex].HeldEquipment.Name; // For Equipment
+        }
         //Still need to write logic for this
     }
 
@@ -252,5 +260,46 @@ public class PartyUI : MonoBehaviour
     public void ShowAndVanishFullPartyText()
     {
         StartCoroutine(ActiveAndDisappearObject(2f,fullPartyText));
+    }
+
+    //---------PARTY EQUIPMENT SELECT---------
+    public void EquipPersonSelect()
+    {
+        if (GameManager.Instance.PlayerParty.People.Count > 0)
+        {
+            Cursor.visible = true;
+            PartyCanvas.SetActive(true);
+            ShowNPCBlocks();
+            ActivateButtons();
+            StopPlayerController();
+        }
+        else
+        {
+            StartCoroutine(ActiveAndDisappearObject(2f, emptyPartyText));
+        }
+    }
+
+    public Person SelectPerson()
+    {
+        GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
+        Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
+
+        return p;
+    }
+
+    private void onPersonBlockClick()
+    {
+        GameObject personBlockButton = EventSystem.current.currentSelectedGameObject.transform.parent.gameObject;
+        Person p = personBlockButton.GetComponent<PersonBlockUI>().person;
+
+        //Closing the button components and UI (for assigning person to a task)
+        //Setting the player to walk again
+        p = null;
+        personBlockButton.SetActive(false);
+        DeActivateButtons();
+        PartyCanvas.SetActive(false);
+        EnablePlayerController();
+        ReleaseAnyHolderReferences();
+        Cursor.visible = false;
     }
 }
