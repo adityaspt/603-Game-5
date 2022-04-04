@@ -79,6 +79,8 @@ public class Challenge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Player.onDeath
+
         isCompleted = false;
         gameObject.GetComponent<SpriteRenderer>().sprite = incompleteSprite;
 
@@ -150,6 +152,8 @@ public class Challenge : MonoBehaviour
 
             //Increment death counter int here 
             GameManager.Instance.DeathCount++;
+
+           // Player.onDeath
         }
     }
 

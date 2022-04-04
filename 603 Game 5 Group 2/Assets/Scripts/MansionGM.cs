@@ -31,4 +31,8 @@ public class MansionGM : MonoBehaviour
         player.SaveData();
         Application.Quit();
     }
+    private void OnApplicationQuit()
+    {
+        
+    }
 }

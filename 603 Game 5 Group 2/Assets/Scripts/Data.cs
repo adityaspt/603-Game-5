@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Data
 {
-    public int deathCount;
+    public int deathCountVal;
 
     public Data(Player player)
     {
-        player.deathCount = deathCount;
+        //player.deathCount = deathCount;
+        deathCountVal = player.deathCount;
     }
 }

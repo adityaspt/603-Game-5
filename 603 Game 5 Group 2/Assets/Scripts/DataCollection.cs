@@ -11,7 +11,7 @@ public class DataCollection
         writer.Write(jsonString);
         writer.Close();
         Debug.Log("data collected");
-        Debug.Log(Application.persistentDataPath);
+        Debug.Log("Path "+Application.persistentDataPath);
         //Old Code as backup
 /*        string path = Application.persistentDataPath + "CollectedData.json";
         FileStream stream = new FileStream(path, FileMode.Create);

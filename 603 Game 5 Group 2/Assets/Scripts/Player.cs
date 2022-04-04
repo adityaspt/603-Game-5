@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //public Player player;
-    public int deathCount;
+    public int deathCount=0;
     public GameManager gameManager;
     //for testing purposes, will be filled in later
+
+    
+
+    public static event EventHandler<EventArgs> onDeath;
 
     public void Start()
     {
@@ -15,11 +20,18 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        deathCount = gameManager.deathCount;
-        print(deathCount + " " + gameManager.deathCount);
+        deathCount = gameManager.DeathCount;
+        print("Death count " + deathCount + " " + gameManager.DeathCount);
     }
     public void SaveData()
     {
         DataCollection.CollectData(this);
     }
+
+    public void SetDeathCount(object sender, EventArgs empty)
+    {
+        deathCount = gameManager.DeathCount;
+        print(deathCount + " " + gameManager.deathCount);
+    }
+
 }
