@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
     public bool storedAllChallenges = false;
 
 
-    private int deathCount = 0;
+    public int deathCount = 0;
     public int DeathCount {
         get { return deathCount; }
         set { deathCount = value; }

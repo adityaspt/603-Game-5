@@ -184,6 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b544938a75f8d4dacf2839edb4a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name1: Josh
-  name2: Jake
+  player: {fileID: 0}
   deathCount: 10
+  gameManager: {fileID: 0}

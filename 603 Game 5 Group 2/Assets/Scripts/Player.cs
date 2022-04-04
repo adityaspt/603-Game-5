@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Player player;
-    public string name1 = "Josh";
-    public string name2 = "Jake";
-    public int deathCount = 10;
-//for testing purposes, will be filled in later
+    //public Player player;
+    public int deathCount;
+    public GameManager gameManager;
+    //for testing purposes, will be filled in later
+
+    public void Start()
+    {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
+    private void Update()
+    {
+        deathCount = gameManager.deathCount;
+        print(deathCount + " " + gameManager.deathCount);
+    }
     public void SaveData()
     {
         DataCollection.CollectData(this);

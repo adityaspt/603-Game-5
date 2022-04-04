@@ -7,7 +7,7 @@ public class DataCollection
     {
         Data data = new Data(player);
         string jsonString = JsonUtility.ToJson(data);
-        StreamWriter writer = new StreamWriter(Application.persistentDataPath + "/data.text");
+        StreamWriter writer = new StreamWriter(Application.persistentDataPath + "/data2.text");
         writer.Write(jsonString);
         writer.Close();
         Debug.Log("data collected");
