@@ -21,6 +21,7 @@ public class ChallengesHolder : MonoBehaviour {
 
     [SerializeField]
     public GameObject endgameUI;
+    public Player player;
 
     [SerializeField]
     public TextMeshProUGUI deathCountVal;
@@ -38,6 +39,7 @@ public class ChallengesHolder : MonoBehaviour {
     void Start() {
         allChallenges = new List<GameObject>();
         incompleteChallenges = new List<Challenge>();
+        player = GameObject.Find("Player").GetComponent<Player>();
         for(int i = 0; i < transform.childCount; i++) {
             allChallenges.Add(transform.GetChild(i).gameObject);
             incompleteChallenges.Add(transform.GetChild(i).GetComponent<Challenge>());
@@ -81,7 +83,7 @@ public class ChallengesHolder : MonoBehaviour {
         foreach(GameObject c in allChallenges) {
             c.gameObject.SetActive(false);
         }
-
+        //player.SaveData();
         print("End game UI");
         endgameUI.SetActive(true);
         Cursor.visible = true;
